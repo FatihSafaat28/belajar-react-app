@@ -28,15 +28,15 @@ const Profile =() => {
         />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            Ini Profile, {userName} urutan ke {urutan}
+            Ini Profile, {userName} {urutan !== 0 && `urutan ke ${urutan}`}
           </h1>
           <div>List Nama User</div>
-          <div>
+          <div id="listNama">
             {arrayOfNama.map((nama,index) => {
               return <ListName key={nama} userName={nama} index={index} changeFunction={()=> changeUserName(nama,index+1)}/>
             })}  
           </div>
-          <div className="cursor-pointer bg-red-900 p-4 hover:bg-red-400" onClick={() => changeUserName('FATIH PARAMETER',100)}> Ganti Username!</div>
+          <div id="btn-nama" className="cursor-pointer bg-red-900 p-4 hover:bg-red-400" onClick={() => changeUserName('FATIH PARAMETER',100)}> Ganti Username!</div>
           
           
           

@@ -1,0 +1,43 @@
+import Image from "next/image";
+import { useState } from "react";
+import CoffeeCard from "@/components/coffeeCard";
+import coffeeList from "@/helpers";
+
+const ProductList = () => {
+    const [selectedCoffee, setSelectedCoffee] = useState<typeof coffeeList[0] | null>(null);
+    return(
+        <div className="flex flex-col overflow-clip">
+            <div className="py-6 px-6 font-bold text-5xl">Coffe List</div>
+            <div className="grid grid-cols-4 gap-4 justify-items-center">
+                {coffeeList.map((coffee, index) => {
+                    return (
+                        <CoffeeCard 
+                            key={index} 
+                            coffee={coffee} 
+                            onClick={() => setSelectedCoffee(coffee)} 
+                        />
+                    )
+                })}
+            </div>
+            {selectedCoffee && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={() => setSelectedCoffee(null)}>
+                    <div className="bg-white rounded-3xl p-6 max-w-lg w-full relative flex flex-col items-center shadow-2xl" onClick={(e) => e.stopPropagation()}>
+                        <div className="rounded-2xl overflow-hidden mb-6 w-full flex justify-center">
+                            <Image
+                                className="w-full h-64 object-cover"
+                                src={selectedCoffee.image}
+                                alt={selectedCoffee.title}
+                                width={500}
+                                height={300}
+                            />
+                        </div>
+                        <div className="text-3xl text-black font-bold mb-2 text-center">{selectedCoffee.title}</div>
+                        <div className="text-lg text-black font-normal text-center">{selectedCoffee.subtitle}</div>
+                    </div>
+                </div>
+            )}
+        </div>
+        
+    )
+};
+export default ProductList;
