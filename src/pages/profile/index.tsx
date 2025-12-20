@@ -2,16 +2,15 @@ import Image from "next/image";
 import ListName from "@/components/listName";
 import { useState } from "react";
 
-const Profile =() => {
+const Profile = () => {
   // const userName = "Fatih"
   const [userName, setUserName] = useState<string>("Fatih Safaat");
   const [urutan, setUrutan] = useState<number>(0);
-  const changeUserName = (userData: string,urutan:number)=>{
-    setUserName(userData)
-    setUrutan(urutan)
-  }
-  const arrayOfNama = [`Gilang`, `Fatih`, `Apif`, `Safaat`]
-
+  const changeUserName = (userData: string, urutan: number) => {
+    setUserName(userData);
+    setUrutan(urutan);
+  };
+  const arrayOfNama = [`Gilang`, `Fatih`, `Apif`, `Safaat`];
 
   return (
     <div
@@ -26,20 +25,32 @@ const Profile =() => {
           height={20}
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left text-white">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             Ini Profile, {userName} {urutan !== 0 && `urutan ke ${urutan}`}
           </h1>
           <div>List Nama User</div>
           <div id="listNama">
-            {arrayOfNama.map((nama,index) => {
-              return <ListName key={nama} userName={nama} index={index} changeFunction={()=> changeUserName(nama,index+1)}/>
-            })}  
+            {arrayOfNama.map((nama, index) => {
+              return (
+                <ListName
+                  key={nama}
+                  userName={nama}
+                  index={index}
+                  changeFunction={() => changeUserName(nama, index + 1)}
+                />
+              );
+            })}
           </div>
-          <div id="btn-nama" className="cursor-pointer bg-red-900 p-4 hover:bg-red-400" onClick={() => changeUserName('FATIH PARAMETER',100)}> Ganti Username!</div>
-          
-          
-          
+          <div
+            id="btn-nama"
+            className="cursor-pointer bg-red-900 p-4 hover:bg-red-400"
+            onClick={() => changeUserName("FATIH PARAMETER", 100)}
+          >
+            {" "}
+            Ganti Username!
+          </div>
+
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             Looking for a starting point or more instructions? Head over to{" "}
             <a
@@ -61,6 +72,6 @@ const Profile =() => {
       </main>
     </div>
   );
-}
+};
 
-export default Profile
+export default Profile;

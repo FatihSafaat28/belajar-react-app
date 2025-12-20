@@ -7,7 +7,7 @@ type ListNameProp ={
 const ListName = ({userName, index, changeFunction}:ListNameProp)=>{
     return(
         <div>
-            <span>
+            <span className="text-sm text-white">
                 {index+1}. {userName}
             </span>
             <button className="ml-2 text-sm text-blue-600 cursor-pointer" onClick={changeFunction}>Rubah</button>
