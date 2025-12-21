@@ -46,8 +46,21 @@ const Navbar = () => {
         >
           Users
         </Link>
+        <Link
+          href="/promo"
+          className="flex items-center px-6 hover:bg-black hover:text-white"
+        >
+          Promo
+        </Link>
       </div>
-      <div className="flex items-center py-4">Logo2</div>
+      <div className="flex flex-row font-semibold">
+        <Link
+          href="/register"
+          className="flex items-center px-6 hover:bg-black hover:text-white"
+        >
+          Register
+        </Link>
+      </div>
     </div>
   );
 };
