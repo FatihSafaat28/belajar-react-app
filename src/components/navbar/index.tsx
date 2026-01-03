@@ -15,7 +15,7 @@ const Navbar = () => {
           priority
         />
       </div>
-      <div className="flex flex-row font-semibold">
+      <div className="flex flex-row font-semibold flex-wrap justify-center">
         <Link
           href="/"
           className="flex items-center px-6 hover:bg-black hover:text-white"
@@ -63,6 +63,12 @@ const Navbar = () => {
           className="flex items-center px-6 hover:bg-black hover:text-white"
         >
           Test Context
+        </Link>
+        <Link
+          href="/mockAPI"
+          className="flex items-center px-6 hover:bg-black hover:text-white"
+        >
+          Mock API
         </Link>
       </div>
       <div className="flex flex-row font-semibold">
