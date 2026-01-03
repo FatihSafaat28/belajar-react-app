@@ -52,6 +52,18 @@ const Navbar = () => {
         >
           Promo
         </Link>
+        <Link
+          href="/counter"
+          className="flex items-center px-6 hover:bg-black hover:text-white"
+        >
+          Counter
+        </Link>
+        <Link
+          href="/testContext"
+          className="flex items-center px-6 hover:bg-black hover:text-white"
+        >
+          Test Context
+        </Link>
       </div>
       <div className="flex flex-row font-semibold">
         <Link

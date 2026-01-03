@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 const RegisterPage = () => {
   const [registerData, setRegisterData] = useState<any>({
     email: "",
