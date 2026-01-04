@@ -17,10 +17,10 @@ const Navbar = () => {
       </div>
       <div className="flex flex-row font-semibold flex-wrap justify-center">
         <Link
-          href="/"
+          href="/dashboard"
           className="flex items-center px-6 hover:bg-black hover:text-white"
         >
-          Home
+          Dashboard
         </Link>
         <Link
           href="/product"
