@@ -7,6 +7,8 @@ const DashboardDetail = () => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<any>(null);
   const [formData, setFormData] = useState<any>({});
+  const isFormIncomplete =
+    !formData.name || !formData.email || !formData.address;
 
   const getData = async () => {
     if (id) {
@@ -105,7 +107,12 @@ const DashboardDetail = () => {
                   </div>
                   <button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                    disabled={isFormIncomplete}
+                    className={`p-2 text-white ${
+                      isFormIncomplete
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-blue-500"
+                    }`}
                   >
                     Save Changes
                   </button>
